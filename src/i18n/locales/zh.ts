@@ -1,5 +1,4 @@
 export default {
-  "welcome": "欢迎使用 Snowchat",
   "name": "Snowchat",
   "login": {
     "title": "登录",
@@ -34,5 +33,11 @@ export default {
   },
   "header": {
     "admin": "管理员"
+  },
+  "home": {
+    "welcome": "欢迎使用 Snowchat",
+    "introduction": "SnowChat 是一个智能聊天机器人平台，帮助您与 AI 助手进行对话。探索我们各种 AI 模型，立即开始对话。",
+    "startChat": "开始对话",
+    "assistantMarket": "助手广场"
   }
 };

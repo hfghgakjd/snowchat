@@ -1,5 +1,4 @@
 export default {
-  "welcome": "Welcome to Snowchat",
   "name": "Snowchat",
   "login": {
     "title": "Login to your account",
@@ -26,9 +25,14 @@ export default {
   },
   "menu": {
     "home": "Home",
-    "assistant": "Assistant"
+    "assistant": "Assistant Market"
   },
   "header": {
     "admin": "Admin"
+  },
+  "home": {
+    "welcome": "Welcome to Snowchat",
+    "introduction": "SnowChat is an intelligent chatbot platform that helps you connect with AI assistants. Explore our various AI models and start your conversation today.",
+    "assistantMarket": "Assistant Market"
   }
 };

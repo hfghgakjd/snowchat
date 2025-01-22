@@ -1,30 +1,23 @@
 <template>
-  <div class="min-h-screen p-8">
-    <div class="max-w-7xl mx-auto">
-      <h1 class="text-4xl font-bold text-gray-800 mb-6">
-        {{ t('welcome') }}
-      </h1>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <p class="text-gray-600 mb-4">
-          {{ t('name') }}
+  <div class="overflow-hidden bg-gray-50">
+    <div class="h-full flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h1 class="text-5xl font-bold text-gray-900 mb-8">
+          {{ t('home.welcome') }}
+        </h1>
+        <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+          {{ t('home.introduction') }}
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h2 class="text-xl font-semibold mb-2">
-              {{ t('menu.home') }}
-            </h2>
-            <p class="text-gray-600">
-              {{ t('welcome') }}
-            </p>
-          </div>
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h2 class="text-xl font-semibold mb-2">
-              {{ t('menu.assistant') }}
-            </h2>
-            <p class="text-gray-600">
-              {{ t('welcome') }}
-            </p>
-          </div>
+        <div class="space-x-4">
+          <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            @click="goToAssistant(1)">
+            {{ t('home.startChat') }}
+          </button>
+          <button
+            class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+            @click="goToAssistant(2)">
+            {{ t('home.assistantMarket') }}
+          </button>
         </div>
       </div>
     </div>
@@ -34,15 +27,25 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'HomeView',
   setup() {
-    const { t, locale } = useI18n()
-    
+    const { t } = useI18n()
+    const router = useRouter()
+
+    const goToAssistant = (i: number) => {
+      if (i === 1) {
+        // 使用命名路由导航到新聊天
+        router.push({ name: 'NewChat' })
+      } else if (i === 2) {
+        router.push('/assistant-market')
+      }
+    }
     return {
       t,
-      locale
+      goToAssistant
     }
   }
 })

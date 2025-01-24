@@ -29,7 +29,8 @@ export default {
   },
   "menu": {
     "home": "首页",
-    "assistant": "助手广场"
+    "assistant": "助手广场",
+    "chat": "对话"
   },
   "header": {
     "admin": "管理员"
@@ -39,5 +40,23 @@ export default {
     "introduction": "SnowChat 是一个智能聊天机器人平台，帮助您与 AI 助手进行对话。探索我们各种 AI 模型，立即开始对话。",
     "startChat": "开始对话",
     "assistantMarket": "助手广场"
+  },
+  "assistant": {
+    "market": {
+      "title": "助手广场",
+      "search": "搜索助手",
+      "category": "分类",
+      "categories": {
+        "all": "全部",
+        "general": "通用助手",
+        "code": "编程助手",
+        "writing": "写作助手",
+        "creative": "创意助手",
+        "business": "商务助手",
+        "academic": "学术助手",
+        "translation": "翻译助手"
+      }
+    },
+    "capabilities": "功能",
   }
 };

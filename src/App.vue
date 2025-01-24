@@ -28,10 +28,17 @@
     <!-- Sidebar and Content -->
     <div class="flex pt-16">
       <!-- Sidebar -->
-      <aside class="fixed w-64 h-[calc(100vh-4rem)] border-r bg-white">
-        <nav class="p-4 space-y-2">
-          <router-link to="/" class="menu-item">
-            <i class="fas fa-home mr-2"></i>{{ t('menu.home') }}
+      <aside class="fixed w-64 h-[calc(100vh-4rem)] border-r bg-white overflow-y-auto">
+        <nav class="p-4">
+          <router-link 
+            v-for="(item, index) in menuItems" 
+            :key="index"
+            :to="item.path" 
+            class="flex items-center px-4 py-3 mb-2 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+            :class="{ 'bg-blue-50 text-blue-600 font-medium': isActiveRoute(item.path) }"
+          >
+            <i :class="item.icon" class="w-5 text-center mr-3"></i>
+            {{ t(item.label) }}
           </router-link>
         </nav>
       </aside>
@@ -52,7 +59,23 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
+
 const { t, locale } = useI18n();
+const route = useRoute();
+
+const menuItems = [
+  { path: '/', label: 'menu.home', icon: 'fas fa-home' },
+  { path: '/assistant-market', label: 'menu.assistant', icon: 'fas fa-robot' },
+  { path: '/chat', label: 'menu.chat', icon: 'fas fa-comments' },
+];
+
+const isActiveRoute = (path: string) => {
+  if (path === '/') {
+    return route.path === path;
+  }
+  return route.path.startsWith(path);
+};
 </script>
 
 <style>
@@ -64,5 +87,23 @@ const { t, locale } = useI18n();
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+/* 添加滚动条样式 */
+aside::-webkit-scrollbar {
+  width: 4px;
+}
+
+aside::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 2px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+  background-color: #d1d5db;
 }
 </style>

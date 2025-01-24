@@ -25,7 +25,8 @@ export default {
   },
   "menu": {
     "home": "Home",
-    "assistant": "Assistant Market"
+    "assistant": "Assistant Market",
+    "chat": "Chat"
   },
   "header": {
     "admin": "Admin"
@@ -33,6 +34,25 @@ export default {
   "home": {
     "welcome": "Welcome to Snowchat",
     "introduction": "SnowChat is an intelligent chatbot platform that helps you connect with AI assistants. Explore our various AI models and start your conversation today.",
+    "startChat": "Start Chat",
     "assistantMarket": "Assistant Market"
+  },
+  "assistant": {
+    "market": {
+      "title": "Assistant Market",
+      "search": "Search for assistants",
+      "category": "Categories",
+      "categories": {
+        "all": "All Categories",
+        "general": "General Assistant",
+        "code": "Code Assistant",
+        "writing": "Writing Assistant",
+        "creative": "Creative Assistant",
+        "business": "Business Assistant",
+        "academic": "Academic Assistant",
+        "translation": "Translation Assistant"
+      }
+    },
+    "capabilities": "Capabilities",
   }
 };

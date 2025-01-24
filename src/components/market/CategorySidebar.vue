@@ -1,5 +1,5 @@
 <template>
-    <div class="w-64 bg-white rounded-lg shadow p-4">
+    <div class="w-64 bg-white rounded-lg shadow p-4 h-fit">
         <h2 class="text-lg font-semibold mb-4">{{ t('assistant.market.category') }}</h2>
         <div class="space-y-2">
             <button v-for="category in categories" :key="category"

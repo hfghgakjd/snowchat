@@ -44,7 +44,7 @@
       </aside>
 
       <!-- Main Content -->
-      <main class="flex-1 ml-64 p-6">
+      <main class="flex-1 ml-64 p-6 h-[calc(100vh-5.5rem)] overflow-hidden">
         <div class="max-w-7xl mx-auto">
           <router-view v-slot="{ Component }">
             <transition name="fade" mode="out-in">

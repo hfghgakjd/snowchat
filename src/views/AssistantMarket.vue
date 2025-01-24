@@ -1,14 +1,16 @@
 <template>
-    <div class="min-h-screen bg-gray-50">
+    <div>
         <MarketHeader :title="t('assistant.market.title')" />
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="px-4 sm:px-6 lg:px-8 py-6">
             <div class="flex gap-6">
                 <CategorySidebar v-model:selected="selectedCategory" :categories="CATEGORY_KEYS" />
                 <div class="flex-1">
                     <SearchBar v-model="searchQuery" />
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                        <AssistantCard v-for="assistant in filteredAssistants" :key="assistant.id"
-                            :assistant="assistant" @select="selectAssistant" />
+                    <div class="mt-4 h-[calc(100vh-17.75rem)] overflow-y-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 pb-6">
+                            <AssistantCard v-for="assistant in filteredAssistants" :key="assistant.id"
+                                :assistant="assistant" @select="selectAssistant" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,5 +107,9 @@ const startChat = (assistant: Assistant) => {
 .slide-leave-from {
     transform: translateX(0);
     opacity: 1;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+    width: 0px;
 }
 </style>
